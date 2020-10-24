@@ -38,10 +38,7 @@ public class PlayerController : MonoBehaviour
     // Physics
     private void FixedUpdate()
     {
-        //idk
-        scoreUI.text = points.ToString();
-        //
-
+        scoreUI.text = points.ToString(); //update score text
         //Movement right at a constant velocity
         rBody.velocity = new Vector2(speed, rBody.velocity.y);
         //float horiz = Input.GetAxis("Horizontal");
@@ -101,12 +98,14 @@ public class PlayerController : MonoBehaviour
             points += 10;
             Debug.Log("Points: " + points);
             scoreUI.text = points.ToString();
+            source.Play();
         }
         else if (other.CompareTag("purpleStarBit")) //player touches star bit
         {
             points += 20;
             Debug.Log("Points: " + points);
             scoreUI.text = points.ToString();
+            source.Play();
         }
     }
 }
